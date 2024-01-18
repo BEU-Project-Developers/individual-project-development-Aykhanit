@@ -16,7 +16,7 @@ namespace DiagnostiCenter
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Tests());
+            Application.Run(new Doctors());
         }
     }
 }
