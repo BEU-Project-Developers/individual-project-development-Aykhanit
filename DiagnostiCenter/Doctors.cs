@@ -69,9 +69,35 @@ namespace DiagnostiCenter
                 try
                 {
                     Con.Open();
-                    SqlCommand cmd = new SqlCommand("insert into DoctorTbl values('" + DocNameTb.Text + "','" + DocDOB.Value.Date + "','" + DocPhoneTb.Text + "','" + DocAddressTb.Text + "','"+DesignationCb.SelectedItem.ToString()+"','"+DocJoinDate.Value.Date+"')", Con);
+                    SqlCommand cmd = new SqlCommand("insert into DoctorTbl values('" + DocNameTb.Text + "','" + DocDOB.Value.Date.ToString("MM.dd.yyyy") + "','" + DocPhoneTb.Text + "','" + DocAddressTb.Text + "','"+DesignationCb.SelectedItem.ToString()+"','"+DocJoinDate.Value.Date.ToString("MM.dd.yyyy") +"')", Con);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Doctor Saved Successfully");
+                    Con.Close();
+                    populate();
+                    reset();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+
+            }
+        }
+
+        private void DeleteBtn_Click(object sender, EventArgs e)
+        {
+            if (key == 0)
+            {
+                MessageBox.Show("Select the Doctor to be deleted");
+            }
+            else
+            {
+                try
+                {
+                    Con.Open();
+                    SqlCommand cmd = new SqlCommand("delete from DoctorTbl where DocId=" + key + ";", Con);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Doctor Deleted Successfully");
                     Con.Close();
                     populate();
                     reset();
@@ -84,14 +110,55 @@ namespace DiagnostiCenter
             }
         }
 
-        private void DeleteBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void ResetBtn_Click(object sender, EventArgs e)
         {
             reset();
+        }
+
+        int key = 0;
+        private void DOCDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DocNameTb.Text = DOCDGV.SelectedRows[0].Cells[1].Value.ToString();
+            DocDOB.Text = DOCDGV.SelectedRows[0].Cells[2].Value.ToString();
+            DocPhoneTb.Text = DOCDGV.SelectedRows[0].Cells[3].Value.ToString();
+            DocAddressTb.Text = DOCDGV.SelectedRows[0].Cells[4].Value.ToString();
+            DesignationCb.SelectedItem = DOCDGV.SelectedRows[0].Cells[5].Value.ToString();
+            DocJoinDate.Text = DOCDGV.SelectedRows[0].Cells[6].Value.ToString();
+            if (DocNameTb.Text == "")
+            {
+                key = 0;
+            }
+            else
+            {
+                key = Convert.ToInt32(DOCDGV.SelectedRows[0].Cells[0].Value.ToString());
+            }
+        }
+
+        private void EditBtn_Click(object sender, EventArgs e)
+        {
+            if (DocNameTb.Text == "" || DocPhoneTb.Text == "" || DesignationCb.SelectedIndex == -1 || DocAddressTb.Text == "")
+            {
+                MessageBox.Show("Missing Information");
+            }
+            else
+            {
+                try
+                {
+                    string Query = "update DoctorTbl set DocName = '" + DocNameTb.Text + "', DOCDOB='" + DocDOB.Value.Date + "', DOCPHONE='" + DocPhoneTb.Text + "', DOCADD='" + DocAddressTb.Text + "', Designation='"+DesignationCb.SelectedItem.ToString()+"', JoinDate='"+DocJoinDate.Value.Date+"' where DocID=" + key + ";";
+                    Con.Open();
+                    SqlCommand cmd = new SqlCommand(Query, Con);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Doctor Updated Successfully");
+                    Con.Close();
+                    populate();
+                    reset();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show("Ex.Message");
+                }
+
+            }
         }
     }
 }
