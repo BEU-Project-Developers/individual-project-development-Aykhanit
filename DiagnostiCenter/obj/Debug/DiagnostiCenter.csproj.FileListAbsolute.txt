@@ -30,3 +30,5 @@ C:\Users\Computer\Desktop\individual-project-development-Aykhanit\DiagnostiCente
 C:\Users\Computer\Desktop\individual-project-development-Aykhanit\DiagnostiCenter\obj\Debug\DiagnostiCenter.csproj.CopyComplete
 C:\Users\Computer\Desktop\individual-project-development-Aykhanit\DiagnostiCenter\obj\Debug\DiagnostiCenter.exe
 C:\Users\Computer\Desktop\individual-project-development-Aykhanit\DiagnostiCenter\obj\Debug\DiagnostiCenter.pdb
+C:\Users\Computer\Desktop\individual-project-development-Aykhanit\DiagnostiCenter\obj\Debug\DiagnostiCenter.Invoices.resources
+C:\Users\Computer\Desktop\individual-project-development-Aykhanit\DiagnostiCenter\obj\Debug\DiagnostiCenter.DashBoard.resources

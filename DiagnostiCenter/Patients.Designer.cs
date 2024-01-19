@@ -333,7 +333,7 @@
             this.PatientDGV.RowHeadersWidth = 51;
             this.PatientDGV.RowTemplate.Height = 24;
             this.PatientDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.PatientDGV.Size = new System.Drawing.Size(1100, 301);
+            this.PatientDGV.Size = new System.Drawing.Size(1100, 353);
             this.PatientDGV.TabIndex = 17;
             this.PatientDGV.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.PatientDGV.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -365,7 +365,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(217, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1136, 32);
+            this.panel2.Size = new System.Drawing.Size(1154, 32);
             this.panel2.TabIndex = 14;
             // 
             // panel1
@@ -389,7 +389,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(217, 747);
+            this.panel1.Size = new System.Drawing.Size(217, 812);
             this.panel1.TabIndex = 13;
             // 
             // label7
@@ -397,7 +397,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(41, 646);
+            this.label7.Location = new System.Drawing.Point(41, 733);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(88, 27);
             this.label7.TabIndex = 17;
@@ -423,6 +423,7 @@
             this.label6.Size = new System.Drawing.Size(134, 27);
             this.label6.TabIndex = 15;
             this.label6.Text = "Dashboard";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // pictureBox4
             // 
@@ -444,6 +445,7 @@
             this.label5.Size = new System.Drawing.Size(144, 27);
             this.label5.TabIndex = 13;
             this.label5.Text = "Test Invoice";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // pictureBox3
             // 
@@ -602,7 +604,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1353, 747);
+            this.ClientSize = new System.Drawing.Size(1371, 812);
             this.Controls.Add(this.EditBtn);
             this.Controls.Add(this.SaveBtn);
             this.Controls.Add(this.label16);

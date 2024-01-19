@@ -160,5 +160,19 @@ namespace DiagnostiCenter
 
             }
         }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            Invoices Obj = new Invoices();
+            Obj.Show();
+            this.Hide();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            DashBoard Obj = new DashBoard();
+            Obj.Show();
+            this.Hide();
+        }
     }
 }

@@ -168,6 +168,7 @@
             this.label6.Size = new System.Drawing.Size(134, 27);
             this.label6.TabIndex = 15;
             this.label6.Text = "Dashboard";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // pictureBox4
             // 
@@ -189,6 +190,7 @@
             this.label5.Size = new System.Drawing.Size(144, 27);
             this.label5.TabIndex = 13;
             this.label5.Text = "Test Invoice";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // pictureBox3
             // 
