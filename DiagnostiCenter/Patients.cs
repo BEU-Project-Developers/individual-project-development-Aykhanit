@@ -167,5 +167,10 @@ namespace DiagnostiCenter
             Obj.Show();
             this.Hide();
         }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

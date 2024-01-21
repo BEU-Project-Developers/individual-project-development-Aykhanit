@@ -53,7 +53,7 @@ namespace DiagnostiCenter
 
         private void label7_Click(object sender, EventArgs e)
         {
-            HttpContext.Current.Session.Clear();
+            Application.Exit();
         }
     }
 }

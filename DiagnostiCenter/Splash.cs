@@ -17,6 +17,8 @@ namespace DiagnostiCenter
             InitializeComponent();
         }
         int startpos = 0;
+      
+        //code simulates progress completion and then smoothly navigates to the next stage of the application.
         private void timer1_Tick(object sender, EventArgs e)
         {
             startpos += 1;
@@ -36,6 +38,11 @@ namespace DiagnostiCenter
         private void Splash_Load(object sender, EventArgs e)
         {
             timer1.Start();
+        }
+
+        private void MyProgress_progressChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

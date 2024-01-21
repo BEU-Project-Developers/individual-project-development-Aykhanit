@@ -34,14 +34,14 @@ namespace DiagnostiCenter
         private void GetPatId()
         {
             Con.Open();
-            SqlCommand cmd = new SqlCommand("select PatId from PatientTbl", Con);
+            SqlCommand cmd = new SqlCommand("select PatId from PatientTbl", Con);// Create SQL command to retrieve patient IDs
             SqlDataReader rdr;
-            rdr=cmd.ExecuteReader(); 
-            DataTable dt = new DataTable();
-            dt.Columns.Add("PatId", typeof(int));
-            dt.Load(rdr);
-            PatientCb.ValueMember = "PatId";
-            PatientCb.DataSource = dt;
+            rdr=cmd.ExecuteReader(); //Executes the query using ExecuteReader(), which returns a SqlDataReader object to efficiently read data row by row.
+            DataTable dt = new DataTable();//Creates a DataTable object to hold the retrieved patient IDs.
+            dt.Columns.Add("PatId", typeof(int));//Explicitly add column for clarity
+            dt.Load(rdr);//// Load data from reader into table
+            PatientCb.ValueMember = "PatId";// Set unique value member
+            PatientCb.DataSource = dt;//// Bind data source for display
             Con.Close();
         }
         private void GetTestId()
@@ -89,11 +89,12 @@ namespace DiagnostiCenter
         private void GetTestData()
         {
             Con.Open();
-            string mysql = "select * from TestTbl where TestId=" + TestIdCb.SelectedValue.ToString() + "";
+            string mysql = "select * from TestTbl where TestId=" + TestIdCb.SelectedValue.ToString() + "";//// Construct SQL query based on selected test ID
+            //Create command and data adapter
             SqlCommand cmd = new SqlCommand(mysql, Con);
-            DataTable dt = new DataTable();
+            DataTable dt = new DataTable();//// Create data table to hold retrieved data
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
-            sda.Fill(dt);
+            sda.Fill(dt);// Fill data table with query results
             foreach (DataRow dr in dt.Rows)
             {
                 TestNameTb.Text = dr["TestDesc"].ToString();
@@ -172,6 +173,11 @@ namespace DiagnostiCenter
             DashBoard Obj = new DashBoard();
             Obj.Show();
             this.Hide();
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
 
         private void AddBtn_Click(object sender, EventArgs e)

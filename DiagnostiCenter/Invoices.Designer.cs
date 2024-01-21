@@ -49,6 +49,9 @@ namespace DiagnostiCenter
             this.AddBtn = new Bunifu.Framework.UI.BunifuThinButton2();
             this.label10 = new System.Windows.Forms.Label();
             this.TestDGV = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4 = new System.Windows.Forms.Panel();
             this.ReferedCb = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -75,9 +78,6 @@ namespace DiagnostiCenter
             this.label14 = new System.Windows.Forms.Label();
             this.TestNameTb = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.TotalLbl = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.TestDGV)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -358,6 +358,24 @@ namespace DiagnostiCenter
             this.TestDGV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.TestDGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "ID";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Description";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Cost";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            // 
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -463,6 +481,7 @@ namespace DiagnostiCenter
             this.label7.Size = new System.Drawing.Size(88, 27);
             this.label7.TabIndex = 17;
             this.label7.Text = "Logout";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // pictureBox5
             // 
@@ -664,24 +683,6 @@ namespace DiagnostiCenter
             this.TotalLbl.Size = new System.Drawing.Size(78, 34);
             this.TotalLbl.TabIndex = 33;
             this.TotalLbl.Text = "Total";
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "ID";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Description";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Cost";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
             // 
             // Invoices
             // 
